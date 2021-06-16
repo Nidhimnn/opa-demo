@@ -1,0 +1,19 @@
+{
+  "netflix": {
+    "tickets": {
+      "user1": [
+        {
+          "assignee": "nidhi"
+        },
+        {
+          "assignee": "arnav"
+        }
+      ],
+      "user2": [
+        {
+          "assignee": "nidhi"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "netflix": {
+    "tickets": {
+      "user1": [
+        {
+          "assignee": "nidhi"
+        },
+        {
+          "assignee": "arnav"
+        },
+        {
+          "role": "customer"
+        }
+      ],
+      "user2": [
+        {
+          "assignee": "nidhi"
+        },
+        {
+          "role": "customer"
+        }
+      ],
+      "nidhi": [
+        {
+          "role": "support"
+        }
+      ],
+      "tw-admin": [
+        {
+          "role": "admin"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "path": [
+    "accounts",
+    "user1"
+  ],
+  "subject": {
+    "user": "nidhi",
+    "groups": [
+      "customer-service"
+    ]
+  }
+}
