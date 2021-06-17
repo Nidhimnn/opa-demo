@@ -7,27 +7,103 @@
         },
         {
           "assignee": "arnav"
-        },
-        {
-          "role": "customer"
         }
       ],
       "user2": [
         {
           "assignee": "nidhi"
-        },
-        {
-          "role": "customer"
         }
+      ]
+    },
+    "users": {
+      "user1": [
+        "customer"
+      ],
+      "user2": [
+        "customer"
       ],
       "nidhi": [
-        {
-          "role": "support"
-        }
+        "support"
+      ],
+      "arnav": [
+        "support",
+        "billing"
       ],
       "tw-admin": [
+        "admin"
+      ]
+    },
+    "role_permissions": {
+      "customer": [
         {
-          "role": "admin"
+          "action": "read",
+          "service": "accounts"
+        },
+        {
+          "action": "read",
+          "service": "payments"
+        },
+        {
+          "action": "update",
+          "service": "payments"
+        },
+        {
+          "action": "read",
+          "service": "notifications"
+        }
+      ],
+      "support":[
+        {
+          "action": "update",
+          "service": "accounts"
+        },
+        {
+          "action": "read",
+          "service": "accounts"
+        },
+        {
+          "action": "read",
+          "service": "payments"
+        }
+      ],
+      "admin": [
+        {
+          "action": "read",
+          "service": "accounts"
+        },
+        {
+          "action": "read",
+          "service": "payments"
+        },
+        {
+          "action": "read",
+          "service": "notifications"
+        },
+        {
+          "action": "update",
+          "service": "accounts"
+        },
+        {
+          "action": "update",
+          "service": "payments"
+        },
+        {
+          "action": "delete",
+          "service": "accounts"
+        }
+      ],
+      "billing":[
+        {
+          "action": "read",
+          "service": "accounts"
+        },
+        {
+          "action": "read",
+          "service": "payments"
+        },
+        {
+          "action": "update",
+          "service": "payments"
         }
       ]
     }
