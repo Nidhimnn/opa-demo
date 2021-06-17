@@ -1,22 +1,24 @@
 package netflix_rbac
 
 import data.netflix.tickets
+import data.netflix.users
+import data.netflix.role_permissions
 
 default allow = false
 
 # Allow user (customer) to access their own accounts
 allow = true {
-    input.method = "GET"
+    input.method == "GET"
     input.path = ["accounts", user_name]
-    input.subject.user = user_name
+    input.subject.user == user_name
 }
 
 # Allow support members to access accounts of customer assigned to them
 allow = true {
-    input.method = "GET"
+    input.method == "GET"
     input.path = ["accounts", user_name]
-    input.subject.user = tickets[user_name][_].assignee
-    input.subject.groups[_] = "customer-service"
+    input.subject.user == tickets[user_name][_].assignee
+    input.subject.groups[_] == "customer-service"
 }
 
 allow = true {
@@ -24,7 +26,7 @@ allow = true {
 }
 
 is_user_admin{
-    data.netflix.users[input.subject.user][_] = "admin"
+    users[input.subject.user][_] == "admin"
 }
 
 allow = true {
@@ -34,6 +36,6 @@ allow = true {
 }
 
 user_is_granted[grant]{
-    role = data.netflix.users[input.user][_]
-    grant = data.netflix.role_permissions[role][_]
+    role = users[input.user][_]
+    grant = role_permissions[role][_]
 }

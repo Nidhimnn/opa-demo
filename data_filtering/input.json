@@ -1,4 +1,6 @@
 {
-  "user": "nidhi",
+  "subject":{
+    "user": "nidhi"
+  },
   "method": "GET"
 }
